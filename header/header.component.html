@@ -1,0 +1,33 @@
+<nav [ngClass]="{'dark-mode': isDarkMode}" class="navbar">
+    <div class="container">
+        <div>
+            <a class="navbar-brand" href="/instrucciones">
+                <img src="../../assets/Imagenes/Logos/interroga.png" alt="Instrucciones" width="100" height="84" title="Instrucciones">
+            </a>
+        </div>
+
+        <div>
+            <a href="" style="text-decoration: none;"><h1>FUTGUESSER</h1></a>
+        </div>
+      
+        <div>
+            <a class="navbar-brand" href="/ajustes">
+                <img src="../../assets/Imagenes/Logos/ajustes.png" alt="Ajustes" width="100" height="84" title="Ajustes">
+            </a>
+        </div>
+
+        <div class="me-3">
+            <button 
+            *ngIf="!loginService.isLogged()"
+            type="button" class="btn btn-success" (click)="toLogin()">Login
+            </button>
+            
+            <button
+            *ngIf="loginService.isLogged()"
+            type="button" class="btn btn-success" (click)="toPerfil()">Mi perfil
+            </button>
+        </div>
+
+    </div>
+  </nav>
+  <hr>

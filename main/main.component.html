@@ -1,0 +1,64 @@
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 equipo">
+                <img id="escudo" [src]="imgEscudo" alt="Equipo" width="160" height="160">
+                <p id="equipo_anio">{{equipoAnio}}</p>
+            </div>
+
+            <div class="col-6 bandera">
+                <img id="nacionalidad" [src]="imgBandera" alt="Nacionalidad" width="180" height="150">
+            </div>
+        </div>
+
+        <div class="row my-4">
+            <div class="col-12 pistas">
+                <div class="col-6">
+                    <h1 id="stats" >{{stats}}</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row my-4">
+            <div class="col-12 pistas">
+                <div class="col-6">
+                    <h1 id="trayectoria">{{trayectoria}}</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row my-4">
+            <div class="col-12 pistas">
+                <div class="col-6">
+                    <h1 class="palmares">
+                        <p id="ucl" [innerHTML]="uclImageHtml"></p>
+                        <p id="mundial" [innerHTML]="mundialesImageHtml"></p>
+                    </h1>
+                </div>
+            </div>
+        </div>
+
+          <div class="row my-4">
+            <div class="col-12">
+                <div class="col-6 mx-auto">
+                    <mat-form-field class="w-100">
+                        <input matInput [formControl]="myControl" [matAutocomplete]="auto" placeholder="Escriba el nombre del jugador" style="font-size: 1em; text-align: center;">
+                        <mat-autocomplete #auto="matAutocomplete">
+                            <mat-option *ngFor="let nombre of filteredOptions | async" [value]="nombre">
+                                {{ nombre }}
+                            </mat-option>
+                        </mat-autocomplete>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+
+        <div class="row my-4">
+            <div class="col-12 pistas">
+                <div class="col-6">
+                    <button class="btn btn-success" id="adivinar" (click)="terminado ? compartir() : adivinar()">{{ textoBoton }}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  </main>

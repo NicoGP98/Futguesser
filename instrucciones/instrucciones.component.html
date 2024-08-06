@@ -1,0 +1,103 @@
+<app-header></app-header>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 d-flex justify-content-around m-auto">
+            <h2><u>CÓMO JUGAR</u></h2>
+            <button class="btn btn-primary" (click)="toMain()">Volver al juego</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <h3>Objetivo del juego</h3>
+        <p>
+            <b>El objetivo del juego es adivinar un futbolista</b>
+            (este puede ser tanto histórico como actual).
+            Para ello, <b>se proporcionarán 6 pistas</b> que contendrán
+            datos sobre las carreras futbolísticas de estos jugadores.
+
+            Las pistas irán apareciendo de una en una tras cada intento
+            fallido. Es decir, <b>tendrás 6 intentos para adivinar el 
+            jugador</b> en cuestión, tras esos 6 intentos perderás la partida.
+            El primer intento debe realizarse sin ayuda de ninguna pista,
+            a ver si consigues hacer un 'Hail Mary'!.
+            
+            Las pistas aparecerán en los recuadros de color que se ven en 
+            la parte central de la pantalla y en las dos imágenes que hay
+            sobre estos.
+        </p>
+    </div>
+
+    <div class="row">
+        <h3>Orden de las pistas</h3>
+        <p>
+            Las cinco pistas que aparecerán serán las siguientes y 
+            en el orden que se muestra a continuación:
+        </p>
+        
+        <p>
+            <b>1º - Stats.</b> En esta pista se desvelarán los goles y asistencias
+            que el jugador ha anotado a lo largo de su carrera 
+            <b>(¡¡¡OJO, SOLO CON CLUBES!!!).</b>
+        </p>
+
+        <p>
+            <b>2º - Trayectoria.</b> En esta pista se desvelará el <b>intervalo de tiempo
+            en el que está, o ha estado, en activo el jugador.</b> Es decir, si empezó
+            a jugar profesionalmente en 2010 y sigue en activo, aparecerá como: 
+            "2010 - Presente"; si, por el contrario se ha retirado, por ejemplo,
+            en 2023, aparecerá tal que así: "2010 - 2023".
+        </p>
+
+        <p>
+            <b>3º - Equipo y años.</b><b>En esta pista se mostrará un equipo en el que ha
+            militado el futbolista a adivinar y los años en los que estuvo en ese
+            equipo.</b> Por ejemplo, si ha estado en el Real Madrid entre 2010 y 2015
+            se mostrará el escudo del Real Madrid, el nombre del equipo y 
+            "2010 - 2015". Ojo porque no quiere decir necesariamente, que solo
+            haya estado ahí. <b>Cabe destacar también que si el jugador ha
+            estado en más de un club, solo se mostrará uno de forma aleatoria
+            por partida.</b>
+        </p>
+
+        <p>
+            <b>4º - UCL y Mundiales.</b> En esta pista se mostrarán
+            la <b>cantidad de UCLs (UEFA Champions League) y Mundiales que tiene el
+            jugador.</b>
+        </p>
+
+        <p>
+            <b>5º - Nacionalidad.</b> Para finalizar, se mostrará como 
+            última pista la <b>nacionalidad del jugador mediante la bandera de ese país.</b>
+            <b>Hay que tener en cuenta que se mostrará como nacionalidad la bandera del 
+            país con la que ese jugador es internacional</b> en caso de serlo o 
+            haberlo sido.
+        </p>
+
+        <div class="row">
+            <h3>Consejos y aclaraciones</h3>
+            <p>
+                - Las estadísticas recopiladas solo enmarcan las conseguidas en 
+                competiciones de clubes.
+            </p>
+
+            <p>
+                - Las estadísticas han sido recopiladas a 15 de abril de 
+                2024 (15/04/2024). 
+            </p>
+
+            <p>
+                - Las estadísticas han sido recogidas vía https://transfermarkt.com/ y https://es.whoscored.com/ .
+            </p>
+
+            <p>
+                - <b>Es muy importante hacer uso de la herramienta de autocompletado 
+                ya que no todos los jugadores profesionales que ha habido, y hay, 
+                están presentes en el juego.</b>
+            </p>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

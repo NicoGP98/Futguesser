@@ -1,0 +1,121 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi perfil Futguesser</title>
+</head>
+<body [ngClass]="{'dark-mode': isDarkMode}">
+  
+<header [ngClass]="{'dark-mode': isDarkMode}">
+    <nav class="navbar">
+      <div class="container-fluid d-flex justify-space-between my-1">
+        <a class="navbar-brand" href="">
+          <img src="../../assets/Imagenes/Logos/ball.png" alt="Logo" width="34" height="30" class="d-inline-block align-text-top">
+          Futguesser
+        </a>
+
+        <div>
+          <button class="btn btn-primary mx-3" (click)="toMain()">Volver al juego</button>
+
+          <button
+          type="button" class="btn btn-danger" (click)="logout()">Cerrar Sesión
+          </button>
+        </div>
+
+      </div>
+    </nav>
+    <hr>
+</header>
+
+<div class="container my-2">
+    <div class="row">
+        <p><b>Bienvenido {{loginService.getUsuario().nombreUsuario}} aquí podrás consultar tus estadísticas en futguesser</b></p>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <h2><u>Estadísticas</u></h2>
+    </div>
+
+    <div class="row" *ngIf="estadisticas">
+      <p><b>Aciertos:</b> {{estadisticas.aciertos}} <b>Fallos:</b> {{estadisticas.fallos}}</p>
+      <p><b>Aciertos al primer intento:</b> {{estadisticas.aciertosPorIntento[0]}}</p>
+      <p><b>Aciertos al segundo intento:</b> {{estadisticas.aciertosPorIntento[1]}}</p>
+      <p><b>Aciertos al tercer intento:</b> {{estadisticas.aciertosPorIntento[2]}}</p>
+      <p><b>Aciertos al cuarto intento:</b> {{estadisticas.aciertosPorIntento[3]}}</p>
+      <p><b>Aciertos al quinto intento:</b> {{estadisticas.aciertosPorIntento[4]}}</p>
+      <p><b>Aciertos al sexto intento:</b> {{estadisticas.aciertosPorIntento[5]}}</p>
+    </div>
+</div>
+
+<app-footer></app-footer>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi perfil Futguesser</title>
+</head>
+<body [ngClass]="{'dark-mode': isDarkMode}">
+  
+<header [ngClass]="{'dark-mode': isDarkMode}">
+  <nav class="navbar">
+    <div class="container-fluid d-flex justify-space-between my-1">
+      <a class="navbar-brand" href="">
+        <img src="../../assets/Imagenes/Logos/ball.png" alt="Logo" width="34" height="30" class="d-inline-block align-text-top">
+        Futguesser
+      </a>
+
+      <div>
+        <button class="btn btn-primary mx-3" (click)="toMain()">Volver al juego</button>
+        <button type="button" class="btn btn-danger" (click)="logout()">Cerrar Sesión</button>
+      </div>
+    </div>
+  </nav>
+  <hr>
+</header>
+
+<div class="container my-2">
+  <div class="row">
+    <p><b>Bienvenido {{loginService.getUsuario().nombreUsuario}} aquí podrás consultar tus estadísticas en futguesser</b></p>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <h2><u>Estadísticas</u></h2>
+  </div>
+
+  <div class="row" *ngIf="estadisticas">
+    <h4>Aciertos y Fallos totales</h4>
+    <div class="col-md-6">
+      <canvas baseChart
+              [data]="aciertosFallosData"
+              [type]="'pie'">
+      </canvas>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row" *ngIf="estadisticas">
+    <h4>Aciertos por número de intento</h4>
+    <div class="col-md-6">
+      <canvas baseChart
+              [data]="intentosData"
+              [type]="'bar'">
+      </canvas>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
+
+</body>
+</html>
